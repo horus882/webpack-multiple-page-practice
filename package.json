@@ -1,0 +1,31 @@
+{
+  "name": "webpack-multiple-page-practice",
+  "version": "1.0.0",
+  "description": "邊做邊記筆記，主要是希望能透過使用 webpack 來處理平常活動網站的開發 (不使用前端框架，多個頁面的網站)",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horus882/webpack-multiple-page-practice.git"
+  },
+  "author": "Brent Hsieh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/horus882/webpack-multiple-page-practice/issues"
+  },
+  "homepage": "https://github.com/horus882/webpack-multiple-page-practice#readme",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "normalize.css": "^8.0.1"
+  }
+}

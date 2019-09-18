@@ -3,7 +3,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    index: "./src/index.js"
+    index: "./src/index.js",
+    about: "./src/about.js",
+    contact: "./src/contact.js"
   },
 
   // 指定 localhost port 號
@@ -32,6 +34,18 @@ module.exports = {
       inject: true,
       chunks: ["index"],
       filename: "index.html"
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/about.html",
+      inject: true,
+      chunks: ["about"],
+      filename: "about.html"
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/contact.html",
+      inject: true,
+      chunks: ["contact"],
+      filename: "contact.html"
     })
   ]
 };

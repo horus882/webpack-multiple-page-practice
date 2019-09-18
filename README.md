@@ -137,3 +137,19 @@ npm install html-loader --save-dev
 回到瀏覽器上會發現 header 已經成功顯示在首頁上
 其他頁面就比照辦理吧 (也順便做個 footer 好了)
 
+---
+然後很無聊的想把 js 全部都收在 js 的資料夾底下  
+module.exports 的 entry 裡面的路徑調整如下  
+(頁面 js 裡面 import 的 css 檔路徑也別忘了)
+
+```javascript
+module.exports = {
+    // ...
+    entry: {
+        index: "./src/js/index.js",
+        about: "./src/js/about.js",
+        contact: "./src/js/contact.js"
+    },
+    // ...
+}
+```

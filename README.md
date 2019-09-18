@@ -22,7 +22,7 @@ touch webpack.dev.js
 ```
 
 修改 package.json，在 scripts 裡加入下面這段，之後就可以使用 npm start 來啟動本機伺服器
-```
+``` json
 "start": "webpack-dev-server --config webpack.dev.js --mode development"
 ```
 
@@ -32,7 +32,7 @@ npm install normalize.css --save
 ```
 
 在該頁面的 js (index.html => index.js) 中加入：
-```
+``` js
 import 'normalize.css/normalize.css';
 ```
 
@@ -43,7 +43,7 @@ npm install css-loader style-loader --save-dev
 ```
 
 module.exports 加入 rules，加完有遇到還是會 compile 失敗，但重新 npm start 一次就正常了
-```
+```json
 module: {
     rules: [
         {
@@ -65,7 +65,7 @@ npm install jquery --save
 ```
 
 module.exports 的 plugins 做些調整，讓 jQuery 變成全域變數
-```
+```json
 plugins: [
     new webpack.ProvidePlugin({
         $: "jquery",

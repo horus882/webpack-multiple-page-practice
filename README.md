@@ -123,3 +123,17 @@ module.exports = {
 
 ---
 接下來想實現常在專案上用到的 php 的 include
+先安裝 html-loader
+```
+npm install html-loader --save-dev
+```
+裝完之後先來修改 index.html (留意要 include 的檔案的路徑)
+``` html
+<body>
+    <%= require('html-loader!./include/header.html') %>
+    <h1>Index 首頁</h1>
+</body>
+```
+回到瀏覽器上會發現 header 已經成功顯示在首頁上
+其他頁面就比照辦理吧 (也順便做個 footer 好了)
+

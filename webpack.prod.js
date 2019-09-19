@@ -1,27 +1,41 @@
+const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const buildPath = path.resolve(__dirname, 'dist')
+
 module.exports = {
+
   entry: {
     index: "./src/js/index.js",
     about: "./src/js/about.js",
     contact: "./src/js/contact.js"
   },
 
-  // 指定 localhost port 號
-  devServer: {
-    port: 8080
+  output: {
+    // filename: '[name].[hash:20].js',
+    filename: '[name].js',
+    path: buildPath
   },
 
   module: {
     rules: [
-      // {
-      //   test: /\.(html)$/,
-      //   use: ['html-loader']
-      // },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"]
+      },
+      {
+        // Load all images as base64 encoding if they are smaller than 8192 bytes
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name].[hash:20].[ext]',
+              limit: 8192
+            }
+          }
+        ]
       }
     ]
   },
